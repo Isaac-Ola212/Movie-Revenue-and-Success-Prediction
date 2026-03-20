@@ -215,7 +215,7 @@ Content includes:
 * Revenue distribution chart
 * Correlation heatmap showing relationships between key variables
 
-## Popularity and Revenue Page
+## Movie Popularity Distribution Page
 
 Purpose: Explore how movie popularity influences financial success.
 
@@ -223,9 +223,8 @@ Content includes:
 
 * Popularity vs Revenue scatter plot
 * Top 10 Highest revenue bar chart
-* Insight text describing how popularity may influence box office performance
 
-## Revenue and Genre Analysis Page
+## Revenue by Genre Analysis Page
 
 Purpose: Investigate how movie revenue varies across different genres and understand genre distribution in the dataset.
 
@@ -233,8 +232,6 @@ Content includes:
 
 * Average revenue by genre chart
 * Movies by genre chart
-* Insight text explaining differences in revenue between genres
-* Interactive filters
 
 ## Budget Success Analysis Page
 
@@ -244,7 +241,6 @@ Content includes:
 
 * Budget quartile vs movie success stacked bar chart
 * Success rate by budget quartile chart
-* Insight text showing how success rates change across different budget categories
 
 # Challenges
 
@@ -286,8 +282,11 @@ The dashboard was developed using **Power BI Desktop** and exported for presenta
 
 Screenshots of the dashboard are included in the repository for reference.
 
-![alt text](images/OVERVIEW.PNG)
-![alt text](images/POPULARITY.PNG)
+images/overview..PNG
+![alt text](images/budget_revenue.PNG)
+![alt text](images/movie_popularity.PNG)
+![alt text](images/genre.PNG)
+![alt text](images/budget_quartile.PNG)
 
 # Main Data Analysis Libraries
 
@@ -306,7 +305,7 @@ This project provided valuable hands-on experience in building a complete data a
 
 During the project, I strengthened my understanding of the **ETL process**, data cleaning, and feature engineering using Python libraries such as Pandas and NumPy. I also gained experience applying **statistical analysis and hypothesis testing** to validate relationships within the dataset.
 
-Another important aspect of the project was building an **interactive dashboard** that communicates analytical findings in a clear and accessible way. This emphasised the importance of presenting technical insights in a format that can be understood by both technical and non-technical audiences.
+Another important aspect of the project was building an **interactive dashboard** that communicates analytical findings in a clear and accessible way. This emphasised the importance of presenting technical insights in a format that can be understood by both technical and non-technical audiences. 
 
 Overall, the project improved my confidence in developing a structured analytics project while highlighting the importance of **data preparation, visual storytelling, and responsible interpretation of results**.
 
@@ -316,17 +315,9 @@ Dataset sourced from:
 
 * TMDB Movie Metadata Dataset (Kaggle)
 
-Documentation from:
-
-* Pandas
-* Scikit-learn
-* Matplotlib
-* Seaborn
-* Power BI documentation
-
 Learning materials:
 
-* Code Institute LMS
+* LMS
 
 Generative AI tools used:
 
