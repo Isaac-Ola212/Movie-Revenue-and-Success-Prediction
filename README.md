@@ -250,9 +250,9 @@ One challenge involved **cleaning and merging the two datasets** (`movies` and `
 
 Another challenge was **handling skewed revenue data**, where a small number of blockbuster movies significantly influenced statistical measures such as the mean.
 
-It was also challenging to **select the most relevant features for machine learning**, as many variables in the dataset were either categorical or nested in JSON format.
+It was also challenging to **select the most relevant features for machine learning**, as many variables in the dataset were either categorical or nested in JSON format. I also tried to edit the genre column in Power BI to contain only name (without ID) but kept getting errors which i didn't have enough time to resolve.
 
-It was challenging getting the DAX syntax for Budget Quartile
+It was challenging getting the DAX syntax for Budget Quartile in my Budget Success Analysis page
 
 # What Went Right
 
@@ -282,7 +282,7 @@ The dashboard was developed using **Power BI Desktop** and exported for presenta
 
 Screenshots of the dashboard are included in the repository for reference.
 
-images/overview..PNG
+![alt text](images/overview..PNG)
 ![alt text](images/budget_revenue.PNG)
 ![alt text](images/movie_popularity.PNG)
 ![alt text](images/genre.PNG)
