@@ -183,6 +183,8 @@ Although the dataset contains information about movies rather than individuals, 
 
 These potential biases were considered when interpreting results, and conclusions were drawn carefully to avoid misleading interpretations.
 
+Additionally, AI-generated outputs were reviewed critically to ensure accuracy and avoid misinformation. Transparency was maintained by clearly documenting the use of AI tools in the project development process.
+
 **Responsible Use of Machine Learning**
 
 The predictive model developed in this project is intended for **educational and analytical purposes**. It should not be used as a definitive tool for predicting movie success in real-world business decisions without further validation, additional data sources, and more sophisticated modelling.
