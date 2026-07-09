@@ -1,6 +1,8 @@
 # Project Overview
 
-This project analyses movie data from the **TMDB (The Movie Database) dataset** to identify key factors influencing movie success and revenue. The project combines **exploratory data analysis, statistical testing, visualisation, and machine learning** to uncover patterns in the movie industry and predict whether a movie is likely to be financially successful.
+This project analyses movie data from the TMDB (The Movie Database) dataset to identify the key factors that influence movie revenue and commercial success. The project combines data cleaning, exploratory data analysis, statistical hypothesis testing, machine learning, and interactive business intelligence dashboards to generate meaningful insights that support data-driven decision-making within the film industry.
+
+Using Python for data preparation and statistical analysis, and Power BI for dashboard development, the project investigates how factors such as production budget, popularity, audience ratings, and genre influence box office performance. A machine learning classification model was also developed to predict whether a movie is likely to be commercially successful.
 
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
@@ -41,6 +43,13 @@ The specific business requirements are:
 * Present insights through visualisations and an interactive dashboard.
 * Provide a dashboard that allows users to explore trends in movie performance.
 
+This project seeks to answer the following business questions:
+
+* Does increasing a movie's production budget lead to higher revenue?
+* Does movie popularity influence financial success?
+* Which genres generate the highest average box office revenue?
+* Can historical movie characteristics be used to predict commercial success?
+
 # Hypothesis and How to Validate
 
 ### Hypothesis 1
@@ -63,13 +72,6 @@ Average revenue differs between movie genres.
 
 **Validation Method:**
 An **ANOVA (Analysis of Variance) test** is used to compare the average revenue across different genres to determine whether the differences are statistically significant.
-
-### Hypothesis 4
-
-Movie success is associated with budget quartile
-
-**Validation Method:**
-An **Chi-Square Test of Independence** is used to determine if there is a statistically significant association between the budget quartile of a movie and its success.
 
 # Project Plan
 
@@ -165,25 +167,28 @@ Generative AI tools were used to assist with:
 
 AI tools were used as **supporting tools**, while the final implementation, validation, and interpretation of results were completed independently.
 
----
+# Ethical, Legal and Social Considerations
+**Ethical Consideration**
 
-# Ethical Considerations
+The TMDB dataset used in this project is publicly available and contains information about movies rather than individuals. As a result, no personal or sensitive data was processed during the analysis. The primary ethical consideration was ensuring that the data was cleaned consistently and that the findings accurately represented the dataset without exaggerating or misinterpreting relationships between variables.
 
-**Data Privacy**
+Generative AI was used to support project planning, debugging, documentation and dashboard design. However, every AI-generated suggestion was independently reviewed, tested against the dataset and adapted where necessary. This ensured that all statistical analyses, visualisations and business conclusions reflected the actual project outputs rather than AI-generated assumptions.
 
-The dataset used in this project is publicly available and does not contain personally identifiable information. Therefore, no personal or sensitive data was processed or stored.
+**Legal Considerations**
 
-**Bias and Fairness**
+The dataset was obtained from Kaggle and is publicly available for educational purposes. No personally identifiable information (PII) was collected, stored or processed, meaning the project did not involve handling data subject to UK GDPR requirements.
 
-Although the dataset contains information about movies rather than individuals, potential biases may still exist in the data. For example:
+Although personal data was not involved, good data management practices were followed throughout the project. Raw and processed datasets were maintained separately, all transformation steps were documented, and version control was implemented using Git and GitHub to ensure transparency, traceability and reproducibility of the analysis.
 
-* Certain genres or production studios may be overrepresented.
-* High-budget movies may dominate revenue trends.
-* Popularity metrics may reflect marketing exposure rather than audience preference.
+**Social Implications of the Findings**
 
-These potential biases were considered when interpreting results, and conclusions were drawn carefully to avoid misleading interpretations.
+The analysis identified positive relationships between production budget, popularity and movie revenue. While these findings provide useful business insights, they should not be interpreted as guarantees of future commercial success. Movie performance is influenced by many additional factors—including marketing strategy, release timing, competition, audience preferences and wider economic conditions—that were not included in the dataset.
 
-Additionally, AI-generated outputs were reviewed critically to ensure accuracy and avoid misinformation. Transparency was maintained by clearly documenting the use of AI tools in the project development process.
+An organisation relying solely on these findings could prioritise investment only in historically successful genres or high-budget productions, potentially overlooking innovative ideas, independent films or emerging market trends. Therefore, the dashboard and predictive model should be used to support decision-making alongside market research, creative expertise and business judgement rather than as the sole basis for investment decisions.
+
+**Data Governance and Transparency**
+
+Throughout the project, good data governance practices were followed to ensure that the analysis was transparent and reproducible. Raw and processed datasets were stored separately, all data cleaning and transformation steps were documented within the Jupyter notebooks, and the complete project was managed using Git and GitHub. These practices allow other analysts to reproduce the workflow, verify the findings and understand how conclusions were reached.
 
 **Responsible Use of Machine Learning**
 
@@ -197,52 +202,45 @@ The dashboard is structured into five main pages:
 
 ## Overview Page
 
+![alt text](Dashboard/dashboard_screenshots/overview.PNG)
+
 Purpose: Provide a high-level overview of the movie dataset.
-
-Content includes:
-
-* Key performance indicators (KPIs)
-* Total movies analysed
-* Average movie rating
-* Total revenue
-* Revenue trends over time
 
 ## Budget and Revenue Page
 
+![alt text](Dashboard/dashboard_screenshots/budget_revenue.PNG)
+
 Purpose: Analyse the relationship between movie production budgets and box office revenue to understand whether higher investment leads to higher financial returns.
-
-Content includes:
-
-* Budget vs Revenue scatter plot
-* Revenue distribution chart
-* Correlation heatmap showing relationships between key variables
 
 ## Movie Popularity Distribution Page
 
+![alt text](Dashboard/dashboard_screenshots/movie_popularity_distribution.PNG)
+
 Purpose: Explore how movie popularity influences financial success.
-
-Content includes:
-
-* Popularity vs Revenue scatter plot
-* Top 10 Highest revenue bar chart
 
 ## Revenue by Genre Analysis Page
 
-Purpose: Investigate how movie revenue varies across different genres and understand genre distribution in the dataset.
+![alt text](Dashboard/dashboard_screenshots/Revenue_genre.PNG)
 
-Content includes:
+Purpose: Investigate how movie revenue varies across different genres and understand genre distribution in the dataset. 
 
-* Average revenue by genre chart
-* Movies by genre chart
+## Budegt Success Analysis
 
-## Budget Success Analysis Page
+![alt text](Dashboard/dashboard_screenshots/budget_success.PNG)
 
 Purpose: Evaluate whether movie success is associated with production budget levels.
 
-Content includes:
+## Key Findings
+* Budget positively influences revenue.
+* Popularity strongly contributes to commercial success.
+* Adventure and Animation produce the highest average revenues.
+* Audience ratings alone do not guarantee financial success.
 
-* Budget quartile vs movie success stacked bar chart
-* Success rate by budget quartile chart
+## Business Recommendations
+* Prioritise investment in commercially successful genres.
+* Allocate production budgets strategically.
+* Invest in marketing to improve movie popularity.
+* Combine financial, audience and creative factors when making production decisions.
 
 # Challenges
 
@@ -250,11 +248,13 @@ Several challenges were encountered during the development of the project.
 
 One challenge involved **cleaning and merging the two datasets** (`movies` and `credits`). The structure of the credits dataset required additional processing to integrate it effectively with the movie metadata.
 
+Another significant challenge encountered was working with the genres column. Rather than containing plain text values, each record stored genre information as a list of dictionaries in JSON format. This required additional preprocessing to extract the genre names before the data could be analysed.
+
+After extracting the genre names, many movies were found to belong to multiple genres, resulting in several genre values being stored within a single cell. This made the data difficult to aggregate and visualise, as Power BI treated each unique genre combination as a separate category rather than recognising individual genres. To overcome this, the genre data was transformed into a more analysis-friendly structure, enabling meaningful comparisons of revenue and ratings across genres.
+
 Another challenge was **handling skewed revenue data**, where a small number of blockbuster movies significantly influenced statistical measures such as the mean.
 
 It was also challenging to **select the most relevant features for machine learning**, as many variables in the dataset were either categorical or nested in JSON format. I also tried to edit the genre column in Power BI to contain only name (without ID) but kept getting errors which i didn't have enough time to resolve.
-
-It was challenging getting the DAX syntax for Budget Quartile in my Budget Success Analysis page
 
 # What Went Right
 
@@ -281,14 +281,6 @@ These challenges helped highlight the importance of **data cleaning, feature eng
 # Deployment
 
 The dashboard was developed using **Power BI Desktop** and exported for presentation.
-
-Screenshots of the dashboard are included in the repository for reference.
-
-![alt text](images/overview..PNG)
-![alt text](images/budget_revenue.PNG)
-![alt text](images/movie_popularity.PNG)
-![alt text](images/genre.PNG)
-![alt text](images/budget_quartile.PNG)
 
 # Main Data Analysis Libraries
 
